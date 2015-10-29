@@ -254,7 +254,7 @@ public class ForecastFragment extends Fragment {
                 // http://openweathermap.org/API#forecast
                 final String FORECAST_BASE_URL =
                         "http://api.openweathermap.org/data/2.5/forecast/daily?";
-                final String api = "334d675a67217dccebdabffc0323b0c9";
+                final String api = BuildConfig.OPEN_WEATHER_MAP_API_KEY;
                 final String QUERY_PARAM = "q";
                 final String FORMAT_PARAM = "mode";
                 final String UNITS_PARAM = "units";
