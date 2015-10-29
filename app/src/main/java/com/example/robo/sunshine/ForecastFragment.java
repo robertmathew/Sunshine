@@ -77,7 +77,7 @@ public class ForecastFragment extends Fragment {
                         R.id.list_item_forecast_textview, // The ID of the textview to populate.
                         new ArrayList<String>());
 
-        View rootView = inflater.inflate(R.layout.fragment_my, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_forecast, container, false);
 
         // Get a reference to the ListView, and attach this adapter to it.
         ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
