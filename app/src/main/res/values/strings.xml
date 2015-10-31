@@ -25,4 +25,5 @@
     <!-- Key name for temperature unit preference in SharedPreferences [CHAR LIMIT=NONE] -->
     <string name="pref_units_key" translatable="false">units</string>
 
+    <string name="content_authority">com.example.robo.sunshine.app</string>
 </resources>
