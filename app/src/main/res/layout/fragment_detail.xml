@@ -9,7 +9,7 @@
     tools:context="com.example.robo.sunshine.DetailActivity">
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/detail_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="@string/hello_world" />
