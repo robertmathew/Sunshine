@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
@@ -9,8 +8,9 @@
               tools:context="com.example.robo.sunshine.MainActivity">
 
     <!--
-    This layout is a two-pane layout for the Sunshine master/detail flow.
+    This layout is a two-pane layout for the Items master/detail flow.
     -->
+
     <fragment
         android:id="@+id/fragment_forecast"
         android:name="com.example.robo.sunshine.ForecastFragment"
