@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.example.robo.sunshine"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest
+    package="com.example.robo.sunshine"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -42,6 +43,9 @@
             android:exported="false"
             android:syncable="true"/>
         <service android:name=".service.SunshineService"/>
+        <receiver
+            android:name=".service.SunshineService$AlarmReceiver"
+            android:enabled="true"/>
     </application>
 
 </manifest>
