@@ -5,11 +5,19 @@
         android:inputType="text"
         android:key="@string/pref_location_key"
         android:singleLine="true"
-        android:title="@string/pref_location_label" />
+        android:title="@string/pref_location_label"/>
+
     <ListPreference
         android:defaultValue="@string/pref_temp_default"
-        android:key="@string/pref_temp_key"
-        android:title="@string/pref_temp_label"
         android:entries="@array/pref_units_options"
-        android:entryValues="@array/pref_units_values" />
+        android:entryValues="@array/pref_units_values"
+        android:key="@string/pref_temp_key"
+        android:title="@string/pref_temp_label"/>
+
+    <CheckBoxPreference
+        android:defaultValue="@string/pref_enable_notifications_default"
+        android:key="@string/pref_enable_notifications_key"
+        android:summaryOff="@string/pref_enable_notifications_false"
+        android:summaryOn="@string/pref_enable_notifications_true"
+        android:title="@string/pref_enable_notifications_label"/>
 </PreferenceScreen>
