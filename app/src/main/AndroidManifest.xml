@@ -4,7 +4,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- This permission is necessary in order for Sunshine to perform network access. -->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Permissions required to make our UI more friendly -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <!-- Permissions required by the sync adapter -->
     <uses-permission
@@ -55,11 +57,11 @@
         <!-- SyncAdapter's dummy authentication service -->
         <service android:name=".sync.SunshineAuthenticatorService">
             <intent-filter>
-                <action android:name="android.accounts.AccountAuthenticator" />
+                <action android:name="android.accounts.AccountAuthenticator"/>
             </intent-filter>
             <meta-data
                 android:name="android.accounts.AccountAuthenticator"
-                android:resource="@xml/authenticator" />
+                android:resource="@xml/authenticator"/>
         </service>
 
         <!-- The SyncAdapter service -->
@@ -68,11 +70,11 @@
             android:exported="true"
             >
             <intent-filter>
-                <action android:name="android.content.SyncAdapter" />
+                <action android:name="android.content.SyncAdapter"/>
             </intent-filter>
             <meta-data
                 android:name="android.content.SyncAdapter"
-                android:resource="@xml/syncadapter" />
+                android:resource="@xml/syncadapter"/>
         </service>
     </application>
 
