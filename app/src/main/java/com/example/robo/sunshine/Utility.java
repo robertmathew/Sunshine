@@ -204,6 +204,43 @@ public class Utility {
     }
 
     /**
+     * Helper method to provide the art urls according to the weather condition id returned
+     * by the OpenWeatherMap call.
+     *
+     * @param context   Context to use for retrieving the URL format
+     * @param weatherId from OpenWeatherMap API response
+     * @return url for the corresponding weather artwork. null if no relation is found.
+     */
+    public static String getArtUrlForWeatherCondition(Context context, int weatherId) {
+        // Based on weather code data found at:
+        // http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes
+        if (weatherId >= 200 && weatherId <= 232) {
+            return context.getString(R.string.format_art_url, "storm");
+        } else if (weatherId >= 300 && weatherId <= 321) {
+            return context.getString(R.string.format_art_url, "light_rain");
+        } else if (weatherId >= 500 && weatherId <= 504) {
+            return context.getString(R.string.format_art_url, "rain");
+        } else if (weatherId == 511) {
+            return context.getString(R.string.format_art_url, "snow");
+        } else if (weatherId >= 520 && weatherId <= 531) {
+            return context.getString(R.string.format_art_url, "rain");
+        } else if (weatherId >= 600 && weatherId <= 622) {
+            return context.getString(R.string.format_art_url, "snow");
+        } else if (weatherId >= 701 && weatherId <= 761) {
+            return context.getString(R.string.format_art_url, "fog");
+        } else if (weatherId == 761 || weatherId == 781) {
+            return context.getString(R.string.format_art_url, "storm");
+        } else if (weatherId == 800) {
+            return context.getString(R.string.format_art_url, "clear");
+        } else if (weatherId == 801) {
+            return context.getString(R.string.format_art_url, "light_clouds");
+        } else if (weatherId >= 802 && weatherId <= 804) {
+            return context.getString(R.string.format_art_url, "clouds");
+        }
+        return null;
+    }
+
+    /**
      * Helper method to provide the art resource id according to the weather condition id returned
      * by the OpenWeatherMap call.
      *
@@ -242,7 +279,8 @@ public class Utility {
     /**
      * Helper method to provide the string according to the weather
      * condition id returned by the OpenWeatherMap call.
-     * @param context Android context
+     *
+     * @param context   Android context
      * @param weatherId from OpenWeatherMap API response
      * @return string for the weather condition. null if no relation is found.
      */
@@ -254,7 +292,7 @@ public class Utility {
             stringId = R.string.condition_2xx;
         } else if (weatherId >= 300 && weatherId <= 321) {
             stringId = R.string.condition_3xx;
-        } else switch(weatherId) {
+        } else switch (weatherId) {
             case 500:
                 stringId = R.string.condition_500;
                 break;
@@ -422,7 +460,7 @@ public class Utility {
      * Returns true if the network is available or about to become available.
      *
      * @param c Context used to get the ConnectivityManager
-     * @return  true if the network is available
+     * @return true if the network is available
      */
     static public boolean isNetworkAvailable(Context c) {
         ConnectivityManager cm =
@@ -434,22 +472,23 @@ public class Utility {
     }
 
     /**
-     *
      * @param c Context used to get the SharedPreferences
      * @return the location status integer type
      */
     @SuppressWarnings("ResourceType")
-    static public @SunshineSyncAdapter.LocationStatus
-    int getLocationStatus(Context c){
+    static public
+    @SunshineSyncAdapter.LocationStatus
+    int getLocationStatus(Context c) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(c);
         return sp.getInt(c.getString(R.string.pref_location_status_key), SunshineSyncAdapter.LOCATION_STATUS_UNKNOWN);
     }
 
     /**
      * Resets the location status.  (Sets it to SunshineSyncAdapter.LOCATION_STATUS_UNKNOWN)
+     *
      * @param c Context used to get the SharedPreferences
      */
-    static public void resetLocationStatus(Context c){
+    static public void resetLocationStatus(Context c) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(c);
         SharedPreferences.Editor spe = sp.edit();
         spe.putInt(c.getString(R.string.pref_location_status_key), SunshineSyncAdapter.LOCATION_STATUS_UNKNOWN);
