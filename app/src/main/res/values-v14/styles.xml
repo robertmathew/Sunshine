@@ -6,7 +6,8 @@
     </style>
 
     <!-- Settings activity action bar styles -->
-    <style name="ActionBar.V14.Sunshine.NoTitle" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+    <style name="ActionBar.V14.Sunshine.NoTitle"
+           parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/primary</item>
         <item name="android:height">56dp</item>
     </style>
