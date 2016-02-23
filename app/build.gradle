@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
 
 
 android {
@@ -33,5 +32,9 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
     compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile "com.google.android.gms:play-services-gcm:8.3.0"
+    compile 'com.google.android.gms:play-services-gcm:8.4.0'
+    compile 'com.google.android.gms:play-services-location:8.4.0'
 }
+
+
+apply plugin: 'com.google.gms.google-services'

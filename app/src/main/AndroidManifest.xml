@@ -21,6 +21,9 @@
         android:protectionLevel="signature" />
     <uses-permission android:name="com.example.android.sunshine.app.permission.C2D_MESSAGE" />
 
+    <!-- Permissions required to use the Place Picker -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -103,6 +106,7 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
         </service>
+
         <service
             android:name=".gcm.MyInstanceIDListenerService"
             android:exported="false">
@@ -110,9 +114,15 @@
                 <action android:name="com.google.android.gms.iid.InstanceID" />
             </intent-filter>
         </service>
+
         <service
             android:name=".gcm.RegistrationIntentService"
-            android:exported="false"></service>
+            android:exported="false" />
+
+        <!--Google Map API key-->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAZxl7ngQN9l0NGKhpRj1AiOir94o87lgM" />
     </application>
 
 </manifest>
