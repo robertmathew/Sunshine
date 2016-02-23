@@ -190,4 +190,7 @@
 
     <!-- For Shared Element Transitions -->
     <string name="detail_icon_transition_name" translatable="false">TN_DetailIcon</string>
+
+    <!-- For Google Places API Attributions -->
+    <string name="attribution_text">Powered by Google</string>
 </resources>
