@@ -122,7 +122,7 @@
         <!--Google Map API key-->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAZxl7ngQN9l0NGKhpRj1AiOir94o87lgM" />
+            android:value="@string/GOOGLE_MAP_API_KEY" />
     </application>
 
 </manifest>
