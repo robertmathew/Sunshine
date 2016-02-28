@@ -101,8 +101,12 @@
     <string name="format_notification">
     Forecast: <xliff:g id="condition">%1$s</xliff:g> High: <xliff:g id="high">%2$s</xliff:g> Low: <xliff:g id="low">%3$s</xliff:g>
     </string>
+
     <!-- Strings related to Notification preference -->
     <string name="pref_last_notification">last_notification</string>
+
+    <!-- Strings related to Widgets -->
+    <string name="title_widget_today">Sunshine Today</string>
 
     <!-- Empty Weather Database -->
     <string name="empty_forecast_list">No Weather Information Available</string>
